@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hamza Naeem — Robotics & AI Engineer</title>
+  <meta name="description" content="Hamza Naeem — Fulbright Scholar, MS Robotics (Northeastern, GPA 4.00). Fiber-termination robotics, SLAM and structure-from-motion research, VLMs on humanoids. Published at IEEE OCEANS 2026." />
+  <meta property="og:title" content="Hamza Naeem — Robotics & AI Engineer" />
+  <meta property="og:description" content="Machines that see, decide, and act. Fiber-termination robotics, SLAM research, VLMs on Unitree humanoids." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23060809'/><text x='50' y='68' font-size='52' font-family='monospace' fill='%2300e887' text-anchor='middle'>HN</text></svg>" />
+  <script>
+    // Applied before first paint so the page never flashes the wrong theme.
+    (function () {
+      try {
+        var saved = localStorage.getItem("theme");
+        var prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+        document.documentElement.setAttribute("data-theme", saved || (prefersLight ? "light" : "dark"));
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- ===== TELEMETRY STRIP ===== -->
+  <div class="strip">
+    <span class="strip-item"><span class="led led-green"></span>BOSTON, MA</span>
+    <span class="strip-item hide-sm" id="clock">--:--:--</span>
+    <div class="ticker hide-sm" aria-hidden="true"><div class="ticker-track">
+      <span>▸ 2 CoRL 2026 WORKSHOP PAPERS ACCEPTED</span><span>▸ vla-failure-probe RELEASED — "STOP" IGNORED IN 6/6 SEEDS</span><span>▸ MS ROBOTICS COMPLETE — GPA 4.00</span><span>▸ FIRST-AUTHOR BENCHMARK AT IEEE OCEANS 2026</span>
+      <span>▸ 2 CoRL 2026 WORKSHOP PAPERS ACCEPTED</span><span>▸ vla-failure-probe RELEASED — "STOP" IGNORED IN 6/6 SEEDS</span><span>▸ MS ROBOTICS COMPLETE — GPA 4.00</span><span>▸ FIRST-AUTHOR BENCHMARK AT IEEE OCEANS 2026</span>
+    </div></div>
+    <span class="strip-item strip-right">IEEE OCEANS 2026 — ACCEPTED</span>
+  </div>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav">
+    <a class="nav-logo" href="#about" data-tab-link="about">HAMZA NAEEM<span class="cursor">_</span></a>
+    <nav class="nav-tabs" id="navTabs">
+      <button class="tab-btn active" data-tab="about"><span class="tab-idx">01</span>ABOUT</button>
+      <button class="tab-btn" data-tab="research"><span class="tab-idx">02</span>RESEARCH</button>
+      <button class="tab-btn" data-tab="work"><span class="tab-idx">03</span>EXPERIENCE</button>
+      <button class="tab-btn" data-tab="projects"><span class="tab-idx">04</span>PROJECTS</button>
+      <button class="tab-btn" data-tab="opensource"><span class="tab-idx">05</span>CODE</button>
+      <button class="tab-btn" data-tab="awards"><span class="tab-idx">06</span>AWARDS</button>
+      <button class="tab-btn" data-tab="contact"><span class="tab-idx">07</span>CONTACT</button>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark and light mode" title="Toggle theme">
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-13a1 1 0 0 1-1-1V1a1 1 0 0 1 2 0v2a1 1 0 0 1-1 1zm0 20a1 1 0 0 1-1-1v-2a1 1 0 0 1 2 0v2a1 1 0 0 1-1 1zM4 13H2a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2zm18 0h-2a1 1 0 0 1 0-2h2a1 1 0 0 1 0 2zM5.6 7.05 4.2 5.64a1 1 0 0 1 1.42-1.42l1.4 1.41A1 1 0 0 1 5.6 7.05zm12.8 12.8-1.4-1.41a1 1 0 0 1 1.4-1.42l1.42 1.41a1 1 0 0 1-1.42 1.42zM18.4 7.05A1 1 0 0 1 17 5.63l1.41-1.41a1 1 0 0 1 1.42 1.42zM5.64 19.85a1 1 0 0 1-.71-1.71l1.41-1.41a1 1 0 0 1 1.42 1.42L6.35 19.5a1 1 0 0 1-.71.35z"/></svg>
+    </button>
+    <a class="btn btn-ghost btn-small" href="assets/Hamza_Naeem_CV.pdf" target="_blank" rel="noopener">CV ↓</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+  </header>
+
+  <main>
+
+    <!-- ===== 01 / ABOUT ===== -->
+    <section class="tab-panel active" id="about">
+
+      <div class="hero">
+        <div class="hero-text">
+          <p class="eyebrow">// FULBRIGHT SCHOLAR · MS ROBOTICS, NORTHEASTERN · GPA 4.00</p>
+          <h1 class="hero-name">Hamza<br />Naeem<span class="accent">.</span></h1>
+          <p class="hero-lede">
+            I build machines that <span class="accent">see, decide, and act</span> — from robots
+            terminating the fiber that ships to SpaceX, xAI, NVIDIA, AWS and Oracle, to
+            VLMs running on Unitree humanoids.
+          </p>
+          <p class="hero-desc">
+            SVP, Robotics &amp; AI at <strong>Cowlar (YC W17)</strong> and Graduate Researcher in
+            Northeastern's <strong>Field Robotics Lab</strong> under Prof. Hanumant Singh. Five years
+            turning perception research into hardware that survives a factory floor, an ocean, and an
+            Arctic winter.
+          </p>
+          <div class="hero-cta">
+            <button class="btn btn-primary" data-tab-link="research">READ THE RESEARCH →</button>
+            <a class="btn btn-ghost" href="assets/Hamza_Naeem_CV.pdf" target="_blank" rel="noopener">DOWNLOAD CV</a>
+          </div>
+        </div>
+
+        <!-- rotating banner -->
+        <div class="banner corner-frame" id="banner" tabindex="0">
+          <div class="banner-track" id="bannerTrack">
+            <figure class="slide">
+              <img src="assets/img/neuroam-fleet.jpg" alt="Robot fleet including Unitree quadrupeds and Boston Dynamics Spot at Northeastern" loading="lazy" />
+              <figcaption>NEU Roam data collection — Unitree, Spot &amp; AgileX platforms.</figcaption>
+            </figure>
+            <figure class="slide">
+              <img src="assets/img/robotics-lab.jpg" alt="Hamza working on a humanoid robot in the lab" />
+              <figcaption>Humanoid bring-up — Field Robotics Lab, 02:00.</figcaption>
+            </figure>
+            <figure class="slide">
+              <img src="assets/img/mit-longevity-win.jpg" alt="Team at MIT Media Lab after winning the longevity hackathon" loading="lazy" />
+              <figcaption>Best AI for Longevity Innovation — MIT Media Lab, 2024.</figcaption>
+            </figure>
+            <figure class="slide">
+              <img src="assets/img/yc-hackathon-win.jpg" alt="First place win at the Draper University x YC AI Startup School hackathon" loading="lazy" />
+              <figcaption>1st place — Draper University × YC AI Startup School.</figcaption>
+            </figure>
+            <figure class="slide">
+              <img src="assets/img/cic-hackathon-win.jpg" alt="Third place award slide for Invoy at Cambridge Innovation Center" loading="lazy" />
+              <figcaption>3rd place — Cambridge Innovation Center Hackathon (Invoy).</figcaption>
+            </figure>
+            <figure class="slide">
+              <img src="assets/img/yc-startup-school.jpg" alt="Hamza at Y Combinator's AI Startup School in San Francisco" loading="lazy" />
+              <figcaption>Y Combinator AI Startup School — San Francisco.</figcaption>
+            </figure>
+            <figure class="slide">
+              <img src="assets/img/mit-6s191.jpg" alt="Hamza with Alex Amini at MIT 6.S191" loading="lazy" />
+              <figcaption>MIT 6.S191 Deep Learning — with instructor Alex Amini.</figcaption>
+            </figure>
+            <figure class="slide">
+              <img class="focus-top" src="assets/img/mit-15393.jpg" alt="Hamza with speaker Bob Jones at MIT 15.393" loading="lazy" />
+              <figcaption>MIT 15.393 Nuts &amp; Bolts of New Ventures — with Bob Jones.</figcaption>
+            </figure>
+            <figure class="slide">
+              <img src="assets/img/skydive.jpg" alt="Hamza skydiving over Puerto Rico" loading="lazy" />
+              <figcaption>Freefall over Puerto Rico. Fast, and well-calibrated.</figcaption>
+            </figure>
+          </div>
+          <div class="banner-hud" aria-hidden="true"><span class="hud-rec"><span class="led led-red"></span>REC</span><span class="hud-cam">CAM_01 · <span id="bannerIdx">01</span>/09</span><span class="hud-scan"></span></div>
+          <button class="banner-nav prev" id="bannerPrev" aria-label="Previous image">‹</button>
+          <button class="banner-nav next" id="bannerNext" aria-label="Next image">›</button>
+          <div class="banner-dots" id="bannerDots"></div>
+        </div>
+      </div>
+
+      <!-- proof band -->
+      <div class="stat-band">
+        <div class="stat corner-frame"><span class="stat-num" data-count="3">3</span><span class="stat-label">PAPERS · OCEANS'26<br/>+ 2 CoRL'26 WORKSHOP</span></div>
+        <div class="stat corner-frame"><span class="stat-num">5&thinsp;µm</span><span class="stat-label">FIBER-INSERTION<br/>MOTION RESOLUTION</span></div>
+        <div class="stat corner-frame"><span class="stat-num" data-count="4">4</span><span class="stat-label">HACKATHON WINS<br/>MIT · YC · CIC</span></div>
+        <div class="stat corner-frame"><span class="stat-num">4.00</span><span class="stat-label">GRADUATE<br/>GPA</span></div>
+      </div>
+
+      <!-- latest -->
+      <div class="section-block">
+        <h3 class="section-title"><span class="sec-idx">01.0</span> LATEST</h3>
+        <ol class="feed">
+          <li><span class="feed-date">2026.10</span><span class="feed-tag">PAPERS</span><p>Two solo-authored papers <strong>accepted at CoRL 2026 workshops</strong>: <em>Reads Right, Judges Wrong</em> (UncertainWM) and <em>Pixels Without Geometry?</em> (Do Robots Need World Models?). <button class="inline-link" data-tab-link="research">Read them →</button></p></li>
+          <li><span class="feed-date">2026.10</span><span class="feed-tag">CODE</span><p>Released <a href="https://github.com/naeem-ha/vla-failure-probe" target="_blank" rel="noopener">vla-failure-probe</a>: π0.5 ignored a mid-grasp <strong>"stop"</strong> in 6 of 6 seeds.</p></li>
+          <li><span class="feed-date">2026.05</span><span class="feed-tag">MILESTONE</span><p>Finished the <strong>MS in Robotics at Northeastern</strong> with a 4.00 GPA as a Fulbright Scholar.</p></li>
+          <li><span class="feed-date">2026</span><span class="feed-tag">PUBLICATION</span><p>First-author SfM feature-matching benchmark <strong>accepted at IEEE OCEANS 2026</strong>. <button class="inline-link" data-tab-link="research">Read it →</button></p></li>
+        </ol>
+      </div>
+
+      <!-- audience router -->
+      <div class="section-block">
+        <h3 class="section-title"><span class="sec-idx">01.1</span> START HERE</h3>
+        <div class="router">
+          <button class="route" data-tab-link="research">
+            <span class="route-tag">FOR PHD ADMISSIONS</span>
+            <h4>Research &amp; publications</h4>
+            <p>First-author IEEE OCEANS 2026 benchmark, two solo-authored CoRL 2026 workshop papers, and four active projects in SLAM, SfM and 3D reconstruction.</p>
+            <span class="route-go">VIEW RESEARCH →</span>
+          </button>
+          <button class="route" data-tab-link="work">
+            <span class="route-tag">FOR HIRING TEAMS</span>
+            <h4>Experience &amp; impact</h4>
+            <p>Five years shipping production robotics at a YC company — perception, controls, embedded systems, and the numbers behind each.</p>
+            <span class="route-go">VIEW EXPERIENCE →</span>
+          </button>
+          <button class="route" data-tab-link="projects">
+            <span class="route-tag">FOR COLLABORATORS</span>
+            <h4>Built &amp; deployed</h4>
+            <p>Robots in production, benchmarks others can reproduce, and open-source code from glaciers to the seafloor.</p>
+            <span class="route-go">VIEW PROJECTS →</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <h3 class="section-title"><span class="sec-idx">01.2</span> WHAT I WORK ON</h3>
+        <div class="card-grid three">
+          <div class="card">
+            <div class="card-num">/01</div>
+            <h4>Perception &amp; SLAM</h4>
+            <p>Structure from motion, photogrammetry, feature matching, point-cloud registration, extrinsic calibration and factor-graph optimization — in scenes where the textbook assumptions break.</p>
+          </div>
+          <div class="card">
+            <div class="card-num">/02</div>
+            <h4>Industrial Robotics</h4>
+            <p>Vision-driven automation at micrometer tolerances: YOLO-based inspection, CANopen servo control, real-time parallel control of robotic cells that run in production.</p>
+          </div>
+          <div class="card">
+            <div class="card-num">/03</div>
+            <h4>Edge &amp; Embedded AI</h4>
+            <p>VLMs and detection models on Jetson, RK3588 and Raspberry Pi — quantization, hardware encoders, and full Android/Linux BSP bring-up on custom boards.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <h3 class="section-title"><span class="sec-idx">01.3</span> RESEARCH INTERESTS</h3>
+        <div class="interests">
+          <span>3D Scene Understanding &amp; Change Detection in Dynamic, Unstructured Environments</span>
+          <span>Structure from Motion &amp; SLAM under Perceptual Degradation</span>
+          <span>Field Robotics</span>
+          <span>Vision-Language Models for Physical Intelligence</span>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <h3 class="section-title"><span class="sec-idx">01.4</span> STACK</h3>
+        <div class="skills">
+          <div class="skill-row"><span class="skill-cat">LANG</span><div class="chips"><span>Python</span><span>C</span><span>C++</span><span>MATLAB</span><span>Bash</span></div></div>
+          <div class="skill-row"><span class="skill-cat">PERCEPTION</span><div class="chips"><span>SLAM</span><span>ORB-SLAM3</span><span>LiDAR SLAM</span><span>SfM (Structure from Motion)</span><span>Photogrammetry</span><span>3D Reconstruction</span><span>SIFT · SuperPoint/SuperGlue</span><span>ICP · GICP · FPFH · TEASER++</span><span>Extrinsic Calibration</span><span>Sensor Fusion</span><span>Kalman Filters</span><span>GTSAM · g2o</span></div></div>
+          <div class="skill-row"><span class="skill-cat">FOUNDATION MODELS</span><div class="chips"><span>VLMs (Qwen2.5-VL)</span><span>VLAs (π0.5 · LIBERO)</span><span>Vision Transformers</span><span>LLMs</span><span>LoRA Fine-Tuning</span><span>SAM</span><span>Diffusion Models</span><span>RAG</span><span>Hugging Face</span></div></div>
+          <div class="skill-row"><span class="skill-cat">ML</span><div class="chips"><span>PyTorch</span><span>TensorFlow</span><span>OpenCV</span><span>YOLO / Ultralytics</span><span>Object Detection</span><span>Segmentation</span><span>Pose Estimation</span><span>MLflow · WandB</span></div></div>
+          <div class="skill-row"><span class="skill-cat">DEPLOYMENT</span><div class="chips"><span>NVIDIA Triton Inference Server</span><span>TFLite Quantization</span><span>Edge Deployment</span><span>Docker</span><span>CI/CD</span><span>AWS</span></div></div>
+          <div class="skill-row"><span class="skill-cat">ROBOTICS</span><div class="chips"><span>ROS / ROS 2</span><span>COLMAP</span><span>Open3D</span><span>PCL</span><span>CloudCompare (M3C2)</span><span>Kinematics</span><span>Motion Planning</span></div></div>
+          <div class="skill-row"><span class="skill-cat">EMBEDDED</span><div class="chips"><span>Linux</span><span>Android BSP (U-Boot · Kernel · Device Tree)</span><span>NVIDIA Jetson</span><span>Rockchip RK3588</span><span>Raspberry Pi</span><span>I2C/SPI/UART/CAN</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 02 / RESEARCH ===== -->
+    <section class="tab-panel" id="research">
+      <h3 class="section-title"><span class="sec-idx">02</span> RESEARCH <span class="title-note">// Field Robotics Lab · Advisor: Prof. Hanumant Singh</span></h3>
+
+      <div class="research-hero corner-frame">
+        <canvas id="cloud" aria-hidden="true"></canvas>
+        <div class="viz-hud viz-hud-tl">POINT_CLOUD :: STRUCTURE-FROM-MOTION</div>
+        <div class="viz-hud viz-hud-br" id="vizFps">— PTS</div>
+      </div>
+
+      <div class="section-block">
+        <h3 class="section-title"><span class="sec-idx">02.1</span> PUBLICATIONS</h3>
+        <div class="pub-list">
+          <article class="pub corner-frame">
+            <div class="pub-status"><span class="led led-green"></span>PEER-REVIEWED · ACCEPTED AT IEEE OCEANS 2026</div>
+            <h4>Feature Matching for Ocean Robotics: A Structure-from-Motion Benchmark Across Marine, Polar, and Aerial Datasets</h4>
+            <p class="pub-authors"><strong>Hamza Naeem</strong>, Dennis Giaya, Hanumant Singh</p>
+            <p>A controlled comparison of nine classical and learned feature-matching pipelines inside one COLMAP SfM framework, on a Svalbard glacier, a deep-sea hydrothermal vent survey and a heritage-building control. Core finding: <strong>registration completeness alone overstates reconstruction quality</strong> — on the vent survey RoMa registers all 108 images, yet 28% of its adjacent camera pairs disagree with the other pipelines' consensus by more than 5×; ALIKED registers 99 with no such disagreement, in 27 minutes instead of 9.1 hours.</p>
+            <figure class="pub-figure">
+              <img src="assets/img/pub-oceans-cityhall.jpg" alt="Sparse reconstructions of the City Hall control sequence across nine feature-matching methods" loading="lazy" />
+              <figcaption>Sparse reconstructions of the City Hall control sequence. Every method except ORB and AKAZE registers all 65 images, yet the recovered geometry differs sharply.</figcaption>
+            </figure>
+            <div class="project-links">
+              <a href="https://github.com/neufieldrobotics/ocean-sfm-benchmark" target="_blank" rel="noopener">CODE ↗</a>
+              <a href="assets/masters-project-slides.pdf" target="_blank" rel="noopener">SLIDES ↗</a>
+            </div>
+          </article>
+
+          <article class="pub corner-frame">
+            <div class="pub-status"><span class="led led-green"></span>ACCEPTED · CoRL 2026 WORKSHOP ON MODELING UNCERTAINTY IN ROBOTIC WORLD MODELS</div>
+            <h4>Reads Right, Judges Wrong: Near-Miss Failures and the Limits of Uncertainty Recovery in VLM Success Detectors</h4>
+            <p class="pub-authors"><strong>Hamza Naeem</strong></p>
+            <p>Vision-language models are now used to judge whether a robot succeeded. On arrangements that miss the instruction by one adjacent swap, <strong>Qwen3.5-4B passes 71 of 144, yet in a separate call it correctly transcribes 70 of the 71 it passes</strong>. Checking a neutral transcription in code removes the error on controlled scenes, but on 200 real robot episodes the verdict scores are near chance (AUROC 0.45–0.51).</p>
+            <div class="project-links">
+              <a href="assets/papers/Naeem_Reads-Right-Judges-Wrong_CoRL2026-UncertainWM.pdf" target="_blank" rel="noopener">PDF ↗</a>
+            </div>
+          </article>
+
+          <article class="pub corner-frame">
+            <div class="pub-status"><span class="led led-green"></span>ACCEPTED · CoRL 2026 WORKSHOP: DO ROBOTS NEED WORLD MODELS?</div>
+            <h4>Pixels Without Geometry? Auditing the 3D Consistency of Video World Models with Structure-from-Motion</h4>
+            <p class="pub-authors"><strong>Hamza Naeem</strong></p>
+            <p>Scores four video world models on 60 real DROID wrist-camera clips with COLMAP, epipolar geometry and VGGT. Raw geometric scores mislead — <strong>a frozen frame beats real footage</strong> — so every score is calibrated against controls built from real footage, including same-episode references matched to each clip's motion.</p>
+            <div class="project-links">
+              <a href="assets/papers/Naeem_Pixels-Without-Geometry_CoRL2026-WM.pdf" target="_blank" rel="noopener">PDF ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="section-block">
+        <h3 class="section-title"><span class="sec-idx">02.2</span> RESEARCH PROJECTS</h3>
+
+        <!-- video feature -->
+        <article class="project featured corner-frame feature-wide">
+          <div class="project-head"><span class="p-status"><span class="led led-green"></span>ACTIVE</span><span class="p-tag">CALIBRATION</span></div>
+          <h4>Real-Time Targetless Camera–LiDAR Calibration</h4>
+          <p>With a four-person team: online extrinsic calibration between a 3D LiDAR (Ouster OS1) and a camera (FLIR Blackfly S) <strong>without checkerboards</strong> — matching LiDAR planes to 2D semantic edges from the Segment Anything Model via tiered translation/rotation optimization, tested by injecting known extrinsic offsets into real-world NeURoam sequences.</p>
+          <div class="video-wrap">
+            <video controls preload="none" playsinline poster="assets/img/cam-lidar-poster.jpg">
+              <source src="assets/cam-lidar-calibration.mp4" type="video/mp4" />
+              Your browser does not support embedded video.
+              <a href="assets/cam-lidar-calibration.mp4">Download the clip</a>.
+            </video>
+            <p class="media-cap">Live calibration on the NeURoam sequences — LiDAR points reprojected onto the camera frame as the transform converges.</p>
+          </div>
+          <div class="project-links">
+            <a href="assets/cam-lidar-calibration-slides.pdf" target="_blank" rel="noopener">SLIDES ↗</a>
+          </div>
+        </article>
+
+        <div class="project-list">
+
+          <article class="project featured corner-frame">
+            <div class="project-media"><img src="assets/img/glacier.jpg" alt="Day-by-day glacier reconstruction comparison" loading="lazy" /></div>
+            <div class="project-head"><span class="p-status"><span class="led led-green"></span>FIELD STUDY</span><span class="p-tag">GLACIOLOGY</span></div>
+            <h4>UAV Glacier Change Detection &amp; Alignment Study</h4>
+            <p>On consecutive drone surveys of a marine-terminating glacier in <strong>Svalbard</strong>, tested how much alignment matters for change estimates: joint vs. separate COLMAP reconstructions, GPS vs. TEASER++/GICP registration on stable terrain, M3C2 vs. DEM volumes. The same flights gave −9 to −1,762 m³, and <strong>a 0.25 m vertical bias alone would add ~2,250 m³ of apparent change</strong>.</p>
+          </article>
+
+          <article class="project featured corner-frame">
+            <div class="project-media"><img src="assets/img/shipwreck.jpg" alt="Underwater photomosaic of the Skerki Bank Roman shipwreck site" loading="lazy" /></div>
+            <div class="project-head"><span class="p-status"><span class="led led-green"></span>ARCHAEOLOGY</span><span class="p-tag">UNDERWATER SfM</span></div>
+            <h4>Underwater Photomosaicing of a Roman Shipwreck</h4>
+            <p>Mosaicked the <strong>Skerki Bank</strong> site from 267 low-contrast seafloor images — SIFT and SuperPoint + SuperGlue matching, RANSAC, and Levenberg–Marquardt homography refinement, with image poses optimized in a <strong>GTSAM factor graph</strong>. Loop closures corrected drift on 6- and 29-image subsets, and SIFT outperformed SuperGlue on the larger image sets.</p>
+          </article>
+
+          <article class="project featured corner-frame">
+            <div class="project-media"><img src="assets/img/quasi-dynamic.jpg" alt="Point cloud reconstructions of a cabinet in base and drawer-open states" loading="lazy" /></div>
+            <div class="project-head"><span class="p-status"><span class="led led-green"></span>QUASI-DYNAMIC SLAM</span><span class="p-tag">3D RECONSTRUCTION</span></div>
+            <h4>Mapping Quasi-Dynamic Environments</h4>
+            <p>Classical SLAM assumes a static world. A COLMAP pipeline reconstructing and segmenting <strong>articulated, multi-state objects</strong> where that fails — SIFT vs SuperGlue benchmarked, point clouds aligned across kinetic states via FPFH + RANSAC, dynamic components separated from static geometry, with GroundingDINO semantics in a queryable scene database.</p>
+            <div class="project-links">
+              <a href="assets/quasi-dynamic-mapping-slides.pdf" target="_blank" rel="noopener">SLIDES ↗</a>
+            </div>
+          </article>
+
+          <article class="project featured corner-frame">
+            <div class="project-media"><img src="assets/img/neuroam-fleet.jpg" alt="Unitree quadrupeds, Boston Dynamics Spot and AgileX rovers used for NEU Roam data collection" loading="lazy" /></div>
+            <div class="project-head"><span class="p-status"><span class="led led-green"></span>DATASET</span><span class="p-tag">MULTI-PLATFORM</span></div>
+            <h4>NEU Roam — Multi-Platform Data Collection</h4>
+            <p>Field data collection across a heterogeneous robot fleet — Unitree quadrupeds, Boston Dynamics Spot and AgileX rovers carrying LiDAR, camera and IMU payloads. The sequences underpinning the camera–LiDAR calibration work.</p>
+          </article>
+
+        </div>
+      </div>
+
+      <div class="section-block">
+        <h3 class="section-title"><span class="sec-idx">02.3</span> TEACHING</h3>
+        <div class="card-grid two">
+          <div class="card">
+            <div class="card-num">2026.01 — 2026.05</div>
+            <h4>Lab Assistant · Mechanical &amp; Industrial Engineering</h4>
+            <p class="t-org">Northeastern · Prof. Andrew Gouldstone</p>
+            <p>Supported <strong>50+ undergraduate engineers</strong> across Northeastern Electric Racing, the Mars Rover Team and Baja Racing — technical guidance on design, prototyping and system development, plus lab access, equipment and safety operations.</p>
+          </div>
+          <div class="card">
+            <div class="card-num">2025.01 — 2025.05</div>
+            <h4>Teaching Assistant · Robot Mechanics &amp; Control</h4>
+            <p class="t-org">Northeastern · Prof. Bahram Shafai</p>
+            <p>Held office hours and graded coursework for <strong>82 graduate students</strong> on kinematics, dynamics, motion planning and control, with MATLAB applications; helped students solve problems in class when the professor was away.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 03 / EXPERIENCE ===== -->
+    <section class="tab-panel" id="work">
+      <h3 class="section-title"><span class="sec-idx">03</span> EXPERIENCE <span class="title-note">// reverse chronological</span></h3>
+      <div class="timeline">
+
+        <div class="t-item">
+          <div class="t-meta"><span class="t-date">2026.05 — PRESENT</span><span class="t-loc">BOSTON, MA</span><span class="t-status t-live"><span class="led led-green"></span>CURRENT</span></div>
+          <div class="t-body">
+            <h4>SVP, Robotics &amp; AI</h4>
+            <p class="t-org">Cowlar, Inc. (Y Combinator W17)</p>
+            <ul>
+              <li>Leading robotics engineering across <strong>perception, controls and embedded platforms</strong> for fiber-optic manufacturing automation.</li>
+              <li>Fine-tuned a <strong>Qwen2.5-VL vision-language model (LoRA)</strong> for fiber inspection on the Fiber Termination and Fiber Sorting robots — cutting human intervention to <strong>~1% of ~1,000 inspection cases handled daily</strong>.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="t-item">
+          <div class="t-meta"><span class="t-date">2025.09 — PRESENT</span><span class="t-loc">BOSTON, MA · REMOTE SINCE 2026.05</span><span class="t-status t-live"><span class="led led-green"></span>CURRENT</span></div>
+          <div class="t-body">
+            <h4>Graduate Research Assistant · Field Robotics Lab</h4>
+            <p class="t-org">Northeastern University · Advisor: Prof. Hanumant Singh</p>
+            <ul>
+              <li>Targetless real-time camera–LiDAR calibration; 3D reconstruction of quasi-dynamic environments; UAV glacier change detection in Svalbard; underwater photomosaicing of a Roman shipwreck.</li>
+              <li>First-author benchmark <strong>accepted at IEEE OCEANS 2026</strong>. <button class="inline-link" data-tab-link="research">See research →</button></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="t-item">
+          <div class="t-meta"><span class="t-date">2025.05 — 2025.08</span><span class="t-loc">NAPERVILLE, IL</span></div>
+          <div class="t-body">
+            <h4>Robotics &amp; AI Intern</h4>
+            <p class="t-org">viaPhoton, Inc.</p>
+            <ul>
+              <li>Built vision-based inspection and automation for <strong>fiber-optic assembly lines on the factory floor</strong> — spanning industrial camera selection and integration, detection-model development, and deployment onto edge compute at the line.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="t-item">
+          <div class="t-meta"><span class="t-date">2021.08 — 2024.09</span><span class="t-loc">ISLAMABAD, PK</span><span class="t-status">PROMOTED</span></div>
+          <div class="t-body">
+            <h4>Principal Design Engineer</h4>
+            <p class="t-org">Cowlar, Inc. (YC W17) · promoted from Computer Vision Engineer</p>
+            <ul>
+              <li>Built a <strong>Fiber Termination Robot</strong> using YOLO vision models (YOLOv11-cls, YOLOv11-obb) and imaging algorithms for inspection, alignment and insertion of 250 µm optical fibers — <strong>97% insertion success at 5 µm motion resolution</strong> via real-time parallel control.</li>
+              <li>Built the <strong>computer vision, ML and hardware-integration software</strong> behind <strong>Fiber Organizer</strong>, a fiber-sorting system patented by viaPhoton (<a href="https://drive.google.com/file/d/1Uf-8bNZxnD8d5D9ZM3UD_Wph_BQUQ2Nn/view?usp=sharing" target="_blank" rel="noopener">US Patent 12,001,073 B2</a>), including the <strong>custom ViT-based model</strong> it runs on — 99% sorting accuracy, <strong>95% reduction in sorting time</strong>.</li>
+              <li>Owned the actuation and motion-control stack of the Fiber Aligner and Termination robots — Festo servo and pneumatic control over CANopen and Modbus — <strong>74% cycle-time reduction</strong>.</li>
+              <li>Engineered a sub-second video streaming &amp; classification pipeline (MoViNet / TensorFlow) for smart shopping carts across edge and NVIDIA cluster inference — <strong>100 ms per classification</strong>.</li>
+              <li>Fixed the RK3588 hardware encoder driver in C++ for hardware-accelerated encoding — <strong>~35% faster</strong> object detection.</li>
+              <li>Benchmarked and deployed detection across edge silicon (Pi CPU, Jetson Nano GPU, RK3588 NPU) with TFLite quantization — <strong>up to 60% lower latency</strong>.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="section-block">
+        <h3 class="section-title"><span class="sec-idx">03.1</span> EDUCATION</h3>
+        <div class="card-grid two">
+          <div class="card">
+            <div class="card-num">2024.09 — 2026.05</div>
+            <h4>Northeastern University</h4>
+            <p class="t-org">MS Robotics · GPA 4.00 / 4.00 · Fulbright Scholar</p>
+            <p class="muted">Autonomous Field Robotics · Mobile Robotics · Robot Sensing &amp; Navigation · Advanced Computer Vision</p>
+          </div>
+          <div class="card">
+            <div class="card-num">2017.09 — 2021.07</div>
+            <h4>NUST, Islamabad</h4>
+            <p class="t-org">BE Electrical Engineering · GPA 3.74 / 4.00 · Top 5%</p>
+            <p class="muted">Dean's Honor List · Pakistan's leading engineering university</p>
+          </div>
+        </div>
+        <div class="card-grid two" style="margin-top:1.1rem">
+          <div class="card">
+            <div class="card-num">MIT · CROSS-REGISTERED</div>
+            <h4>6.S191 — Deep Learning</h4>
+            <p class="muted">MIT's flagship deep learning course, taught by Alex Amini.</p>
+          </div>
+          <div class="card">
+            <div class="card-num">MIT · CROSS-REGISTERED</div>
+            <h4>15.393 — Nuts &amp; Bolts of New Ventures</h4>
+            <p class="muted">MIT Sloan's founder course on building and scaling new ventures.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 04 / PROJECTS ===== -->
+    <section class="tab-panel" id="projects">
+      <h3 class="section-title"><span class="sec-idx">04</span> PROJECTS <span class="title-note">// robotics &amp; hardware first, software last</span></h3>
+
+      <h4 class="group-label">▸ ROBOTICS &amp; AUTOMATION</h4>
+      <div class="project-list">
+
+        <article class="project featured corner-frame">
+          <div class="project-head"><span class="p-status"><span class="led led-amber"></span>PATENT PENDING</span><span class="p-tag">16 AI MODELS</span></div>
+          <h4>Fiber Termination Line Robot</h4>
+          <p>A robot running <strong>16 AI models</strong> to inspect, cut, strip, clean and insert 250 µm optical fibers at micrometer scale — <strong>5 µm motion resolution, 97% insertion success</strong>, scaling production speed 10×. The cables built on the line ship to SpaceX, xAI, NVIDIA, AWS and Oracle.</p>
+          <div class="project-links">
+            <a href="https://drive.google.com/file/d/1F7PCP8L3hbd0DyG9_wyzviQYaPRQoSV1/view?usp=sharing" target="_blank" rel="noopener">DEMO ↗</a>
+          </div>
+        </article>
+
+        <article class="project featured corner-frame">
+          <div class="project-media"><img src="assets/img/fiber-aligner.jpg" alt="Fiber aligner station with vision inspection interface" loading="lazy" /></div>
+          <div class="project-head"><span class="p-status"><span class="led led-green"></span>IN PRODUCTION</span><span class="p-tag">PATENTED SYSTEM</span></div>
+          <h4>Fiber Organizer — Automated Sorting</h4>
+          <p>Built the computer vision, ML and hardware-integration software behind Fiber Organizer, a fiber-sorting system patented by viaPhoton (<strong>US Patent 12,001,073 B2</strong>). A <strong>custom ViT-based model I designed</strong> detects fiber colour order and drives automated sorting at <strong>99% accuracy</strong> — <strong>8 s per operation vs 4 min manually</strong>.</p>
+          <div class="project-links">
+            <a href="https://drive.google.com/file/d/1Uf-8bNZxnD8d5D9ZM3UD_Wph_BQUQ2Nn/view?usp=sharing" target="_blank" rel="noopener">PATENT ↗</a>
+            <a href="https://drive.google.com/file/d/1gDHjrgWpzrVPGD0KXccwMhu_WBspl2z2/view?usp=sharing" target="_blank" rel="noopener">SYSTEM IN ACTION ↗</a>
+          </div>
+        </article>
+
+        <article class="project featured corner-frame">
+          <div class="project-head"><span class="p-status"><span class="led led-green"></span>MANIPULATION</span><span class="p-tag">INVERSE KINEMATICS</span></div>
+          <h4>Pick &amp; Place Control for PincherX-100</h4>
+          <p>Perception-driven manipulator in MATLAB and C++ — overhead camera and OpenCV for calibration and 3D geometry-based pose estimation, homogeneous transforms with dynamic inverse kinematics for obstacle-aware trajectory planning and execution.</p>
+          <div class="video-wrap video-portrait">
+            <video controls preload="none" playsinline poster="assets/img/pincherx-poster.jpg">
+              <source src="assets/pincherx-pick-place.mp4" type="video/mp4" />
+              Your browser does not support embedded video.
+              <a href="assets/pincherx-pick-place.mp4">Download the clip</a>.
+            </video>
+            <p class="media-cap">The arm executing a perception-driven pick-and-place cycle.</p>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-head"><span class="p-tag">SLAM · ROS 2</span></div>
+          <h4>Multi-Modal SLAM Benchmark</h4>
+          <p>Monocular and RGB-D visual SLAM with ORB-SLAM3 (feature tracking, PnP pose estimation, BoW loop closing) on EuRoC/TUM and live feeds, plus a ROS 2 LiDAR SLAM pipeline on an LDS-01 scanner (point-cloud filtering, NDT/GICP alignment, submaps, g2o pose-graph optimization) — compared across texture dependency, depth accuracy, lighting robustness and map quality.</p>
+        </article>
+
+        <article class="project">
+          <div class="project-head"><span class="p-tag">SENSOR FUSION</span></div>
+          <h4>GPS-Denied Vehicle Navigation via IMU Fusion</h4>
+          <p>Dead-reckoning pipeline estimating a vehicle's 2D trajectory from a VectorNav VN-100 IMU, benchmarked against GPS over a multi-km Boston drive. Magnetometer calibrated for hard/soft-iron distortion via eigenvalue decomposition, yaw fused with a tuned Butterworth complementary filter over a 3.9 km drive.</p>
+        </article>
+
+        <article class="project">
+          <div class="project-head"><span class="p-tag">NUST · SIM-TO-REAL</span></div>
+          <h4>AGV Steering via Neural Networks</h4>
+          <p>Trained a ResNet-101 steering policy on 50,000 synthetic and 6,000 real images (<strong>89% accuracy</strong>) and deployed it in C++ to drive a physical UGV from monocular camera input — closing the sim-to-real gap end to end.</p>
+        </article>
+
+        <article class="project">
+          <div class="project-head"><span class="p-tag">EDGE AI · GPS-DENIED NAV</span></div>
+          <h4>AI Visual Positioning System</h4>
+          <p>Trolley tracking in GPS-denied industrial environments on Raspberry Pi 4B — Pyzbar + YOLO, dual-camera and IMU fusion, adaptive exposure for reliable QR/Code-128 detection. Cut production downtime ~30%.</p>
+        </article>
+
+      </div>
+
+      <h4 class="group-label">▸ EMBEDDED &amp; EDGE SYSTEMS</h4>
+      <div class="project-list">
+
+        <article class="project featured corner-frame">
+          <div class="project-media is-figure"><img src="assets/img/rk3588-bsp.jpg" alt="RK3588 Android BSP port architecture: boot flow, peripheral bring-up and secure boot chain" loading="lazy" /></div>
+          <div class="project-head"><span class="p-status"><span class="led led-green"></span>WEEKS → DAYS</span><span class="p-tag">ANDROID BSP</span></div>
+          <h4>RK3588 Android BSP Port &amp; Custom Board Bring-Up</h4>
+          <p>Ported a full stack (U-Boot, kernel, Linux, Android) to a new RK3588 board — rebuilt the device tree from vendor <code>.dtsi</code> with DDR timings, PMIC regulators, pin muxing and clocks, then brought up MIPI-DSI, I2C touch, RKNPU, USB 3.0/OTG-C, SDIO WiFi and UART Bluetooth. Cut new-board release cycles <strong>from weeks to days</strong>, hardened with signed U-Boot, dm-verity and a locked bootloader. <em>The same SoC ships in the Unitree G1.</em></p>
+        </article>
+
+        <article class="project featured corner-frame">
+          <div class="project-media"><img src="assets/img/smart-carts.jpg" alt="AI-powered smart shopping cart deployed in an Al Meera store" loading="lazy" /></div>
+          <div class="project-head"><span class="p-status"><span class="led led-green"></span>LIVE — AL MEERA, QATAR</span><span class="p-tag">EDGE VIDEO AI</span></div>
+          <h4>AI-Powered Smart Shopping Carts</h4>
+          <p>Activity detection and action recognition for smart shopping carts, extending Google's MoViNet — sub-second streaming pipeline across edge and NVIDIA cluster inference, <strong>100 ms classification</strong>, running live in Al Meera stores in Qatar.</p>
+          <div class="project-links">
+            <a href="https://drive.google.com/file/d/1hte_AkSX6JqBq6ixFDg4JpO0bjGHBIEc/view?usp=sharing" target="_blank" rel="noopener">DEMO ↗</a>
+            <a href="https://www.gulf-times.com/article/690796/qatar/al-meera-highlights-ai-automation-at-conteq-expo-2024" target="_blank" rel="noopener">PRESS ↗</a>
+          </div>
+        </article>
+
+      </div>
+
+      <h4 class="group-label">▸ AI &amp; SOFTWARE</h4>
+      <div class="project-list">
+
+        <article class="project featured corner-frame">
+          <div class="project-media is-figure"><img src="assets/img/longevity2vec.jpg" alt="Longevity2Vec architecture: Pathway2Vec embeddings through a difference layer and transformer decoder" loading="lazy" /></div>
+          <div class="project-head"><span class="p-status"><span class="led led-green"></span>WINNER — MIT MEDIA LAB</span><span class="p-tag">LLM AGENT</span></div>
+          <h4>Longevity2Vec</h4>
+          <p>LLM-based AI agent for longevity research and drug discovery. Pathway embeddings across age cohorts pass through a difference layer into a transformer decoder to surface actionable pathway insights — energy metabolism, muscle density, neurotrophic factor, circadian rhythm, immunity and genomic stability. Winner of <strong>Best AI for Longevity Innovation</strong>, MIT Media Lab, 2024.</p>
+          <div class="project-links">
+            <a href="https://drive.google.com/file/d/1oTu2T4w93N3tKIZTXRxvGZqt0eUdLXU1/view?usp=sharing" target="_blank" rel="noopener">PROJECT ↗</a>
+          </div>
+        </article>
+
+        <article class="project featured corner-frame">
+          <div class="project-head"><span class="p-status"><span class="led led-green"></span>1ST PLACE — DRAPER × YC</span><span class="p-tag">REAL-TIME CV</span></div>
+          <h4>PostureCheck</h4>
+          <p>Real-time web app using <strong>Google Gemini and MediaPipe</strong> to detect poor lifting posture and report live incidents. Built at the Draper University × YC AI Startup School Hackathon (Hero City) — <strong>1st place</strong>.</p>
+        </article>
+
+        <article class="project featured corner-frame">
+          <div class="project-head"><span class="p-status"><span class="led led-green"></span>3RD PLACE — CIC</span><span class="p-tag">AI AGENT</span></div>
+          <h4>Invoy</h4>
+          <p><em>The AI that turns all your hard work into guaranteed revenue.</em> An agent that converts logged work and calendar activity into invoices automatically — <strong>3rd place at the Cambridge Innovation Center Hackathon</strong>, October 2025.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== 05 / CODE ===== -->
+    <section class="tab-panel" id="opensource">
+      <h3 class="section-title"><span class="sec-idx">05</span> OPEN_SOURCE <span class="title-note">// built to be reproduced</span></h3>
+
+      <div class="card-grid two">
+        <a class="card repo" href="https://github.com/neufieldrobotics/ocean-sfm-benchmark" target="_blank" rel="noopener">
+          <div class="repo-head"><span class="repo-icon">◈</span><h4>ocean-sfm-benchmark</h4></div>
+          <p>The code behind the IEEE OCEANS 2026 paper, released by the Field Robotics Lab. Benchmarks 9 classical and learned feature-matching pipelines (SIFT, ORB, AKAZE, SuperPoint+SuperGlue, ALIKED, DISK+LightGlue, LoFTR, DKM, RoMa) on marine, polar and aerial scenes, with configurations and measured results.</p>
+          <span class="repo-lang">PYTHON · COLMAP · PYTORCH</span>
+        </a>
+        <a class="card repo" href="https://github.com/naeem-ha/vla-failure-probe" target="_blank" rel="noopener">
+          <div class="repo-head"><span class="repo-icon">◈</span><h4>vla-failure-probe</h4></div>
+          <p>Probing a vision-language-action policy (π0.5 on LIBERO) for safety failures beyond collision. First finding: a "stop" instruction issued mid-grasp was <strong>ignored in 6 of 6 seeds</strong> — the gripper still closed on the bowl every time.</p>
+          <span class="repo-lang">PYTHON · π0.5 · LIBERO</span>
+        </a>
+      </div>
+
+      <div class="section-block">
+        <h3 class="section-title"><span class="sec-idx">05.1</span> PROFILES</h3>
+        <div class="card-grid two">
+          <a class="card repo" href="https://github.com/naeem-ha" target="_blank" rel="noopener">
+            <div class="repo-head"><span class="repo-icon">⌥</span><h4>GitHub</h4></div>
+            <p>github.com/naeem-ha — research code, robotics experiments and course projects.</p>
+          </a>
+          <a class="card repo" href="https://www.linkedin.com/in/hamza-naeem1/" target="_blank" rel="noopener">
+            <div class="repo-head"><span class="repo-icon">⌘</span><h4>LinkedIn</h4></div>
+            <p>Hackathon wins, talks and work updates — linkedin.com/in/hamza-naeem1.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 06 / AWARDS ===== -->
+    <section class="tab-panel" id="awards">
+      <h3 class="section-title"><span class="sec-idx">06</span> AWARDS_&amp;_HONORS</h3>
+      <div class="award-list">
+        <div class="award">
+          <span class="award-idx">2024</span>
+          <div><h4>Fulbright Scholarship — US Department of State</h4><p>Selected from <strong>10,000+ applicants</strong> for a fully funded MS. One of the most competitive international scholarships in the world.</p></div>
+        </div>
+        <div class="award">
+          <span class="award-idx">2025</span>
+          <div><h4>1st Place — Draper University × YC AI Startup School Hackathon</h4><p>Built <strong>PostureCheck</strong>, a real-time web app using Google Gemini and MediaPipe to detect poor lifting posture and report live incidents. Hosted by Raising AI at Hero City, June 2025.</p></div>
+        </div>
+        <div class="award">
+          <span class="award-idx">2024</span>
+          <div><h4>Best AI for Longevity Innovation — MIT Media Lab</h4><p>Awarded at the Longevity, AI &amp; Cognitive Research Hackathon organised by Ekkolapto @ MIT Media Lab, supported by the Augmentation Lab (Harvard &amp; MIT). Our team won for <a href="https://drive.google.com/file/d/1oTu2T4w93N3tKIZTXRxvGZqt0eUdLXU1/view?usp=sharing" target="_blank" rel="noopener">Longevity2Vec</a>, earning tickets to the <strong>2024 Biomarkers of Aging Conference at Harvard</strong>.</p></div>
+        </div>
+        <div class="award">
+          <span class="award-idx">2025</span>
+          <div><h4>3rd Place — Cambridge Innovation Center Hackathon</h4><p>Built <strong>Invoy</strong> — the AI that turns all your hard work into guaranteed revenue — with Hamza Mubashir and Khubaib Waqar Khan, October 2025.</p></div>
+        </div>
+        <div class="award">
+          <span class="award-idx">2024</span>
+          <div><h4>Patented System in Production — Fiber Organizer</h4><p>Built the computer vision software behind <a href="https://drive.google.com/file/d/1Uf-8bNZxnD8d5D9ZM3UD_Wph_BQUQ2Nn/view?usp=sharing" target="_blank" rel="noopener">Fiber Organizer</a>, a fiber-sorting system patented by viaPhoton (US Patent 12,001,073 B2). A second patent is pending on the Fiber Termination Line Robot.</p></div>
+        </div>
+        <div class="award">
+          <span class="award-idx">2023</span>
+          <div><h4>Dean's Graduate Scholarship — Northeastern University</h4><p>75% tuition waiver awarded for academic excellence.</p></div>
+        </div>
+        <div class="award">
+          <span class="award-idx">2021</span>
+          <div><h4>Dean's Honor List — NUST</h4><p>Recognized for an outstanding GPA throughout the undergraduate degree; graduated in the top 5%.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 07 / CONTACT ===== -->
+    <section class="tab-panel" id="contact">
+      <h3 class="section-title"><span class="sec-idx">07</span> CONTACT</h3>
+      <div class="contact-wrap">
+        <div class="terminal corner-frame">
+          <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span><span class="term-title">hamza@boston:~$</span></div>
+          <div class="term-body">
+            <p><span class="term-prompt">$</span> whoami</p>
+            <p class="term-out">Robotics &amp; AI engineer. Fulbright Scholar. Building perception systems that survive the real world.</p>
+            <p><span class="term-prompt">$</span> contact --list</p>
+            <p class="term-out">
+              <a href="mailto:naeem.ha@northeastern.edu">EMAIL&nbsp;&nbsp;&nbsp;&nbsp;→ naeem.ha@northeastern.edu</a><br/>
+              <a href="https://www.linkedin.com/in/hamza-naeem1/" target="_blank" rel="noopener">LINKEDIN&nbsp;&nbsp;→ /in/hamza-naeem1</a><br/>
+              <a href="https://github.com/naeem-ha" target="_blank" rel="noopener">GITHUB&nbsp;&nbsp;&nbsp;→ /naeem-ha</a><br/>
+              <a href="assets/Hamza_Naeem_CV.pdf" target="_blank" rel="noopener">CV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;→ ./Hamza_Naeem_CV.pdf</a>
+            </p>
+            <p><span class="term-prompt">$</span> <span class="cursor">▌</span></p>
+          </div>
+        </div>
+      </div>
+      <a class="mega-mail" href="mailto:naeem.ha@northeastern.edu">LET'S BUILD SOMETHING<span class="accent">.</span></a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 HAMZA NAEEM · BOSTON, MA · <span class="accent">EOF</span></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
