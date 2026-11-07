@@ -74,7 +74,7 @@
             VLMs running on Unitree humanoids.
           </p>
           <p class="hero-desc">
-            SVP, Robotics &amp; AI at <strong>Cowlar (YC W17)</strong> and Graduate Researcher in
+            Robotics &amp; AI at <strong>Cowlar (YC W17)</strong> and Graduate Researcher in
             Northeastern's <strong>Field Robotics Lab</strong> under Prof. Hanumant Singh. Five years
             turning perception research into hardware that survives a factory floor, an ocean, and an
             Arctic winter.
@@ -240,8 +240,8 @@
             <p class="pub-authors"><strong>Hamza Naeem</strong>, Dennis Giaya, Hanumant Singh</p>
             <p>A controlled comparison of nine classical and learned feature-matching pipelines inside one COLMAP SfM framework, on a Svalbard glacier, a deep-sea hydrothermal vent survey and a heritage-building control. Core finding: <strong>registration completeness alone overstates reconstruction quality</strong> — on the vent survey RoMa registers all 108 images, yet 28% of its adjacent camera pairs disagree with the other pipelines' consensus by more than 5×; ALIKED registers 99 with no such disagreement, in 27 minutes instead of 9.1 hours.</p>
             <figure class="pub-figure">
-              <img src="assets/img/pub-oceans-cityhall.jpg" alt="Sparse reconstructions of the City Hall control sequence across nine feature-matching methods" loading="lazy" />
-              <figcaption>Sparse reconstructions of the City Hall control sequence. Every method except ORB and AKAZE registers all 65 images, yet the recovered geometry differs sharply.</figcaption>
+              <img src="assets/img/pub-oceans-vent.png" alt="Sparse reconstructions of the Bio9 hydrothermal vent from nine feature-matching methods, each with its recovered camera path" loading="lazy" />
+              <figcaption>Sparse reconstructions of the Bio9 hydrothermal vent, with each method's recovered camera path in red. RoMa registers all 108 images, but its camera path jumps around; ALIKED registers 99 along a coherent path.</figcaption>
             </figure>
             <div class="project-links">
               <a href="https://github.com/neufieldrobotics/ocean-sfm-benchmark" target="_blank" rel="noopener">CODE ↗</a>
@@ -264,6 +264,10 @@
             <h4>Pixels Without Geometry? Auditing the 3D Consistency of Video World Models with Structure-from-Motion</h4>
             <p class="pub-authors"><strong>Hamza Naeem</strong></p>
             <p>Scores four video world models on 60 real DROID wrist-camera clips with COLMAP, epipolar geometry and VGGT. Raw geometric scores mislead — <strong>a frozen frame beats real footage</strong> — so every score is calibrated against controls built from real footage, including same-episode references matched to each clip's motion.</p>
+            <figure class="pub-figure">
+              <img src="assets/img/pub-wm-models.png" alt="A real DROID wrist-camera clip and five-second predictions from Ctrl-World, Wan2.2-5B, CogVideoX-5B and LTX-Video" loading="lazy" />
+              <figcaption>A real DROID wrist-camera clip (top row) and the five-second predictions of four video world models, at one-second steps.</figcaption>
+            </figure>
             <div class="project-links">
               <a href="assets/papers/Naeem_Pixels-Without-Geometry_CoRL2026-WM.pdf" target="_blank" rel="noopener">PDF ↗</a>
             </div>
@@ -295,14 +299,14 @@
         <div class="project-list">
 
           <article class="project featured corner-frame">
-            <div class="project-media"><img src="assets/img/glacier.jpg" alt="Day-by-day glacier reconstruction comparison" loading="lazy" /></div>
+            <div class="project-media is-figure"><img src="assets/img/glacier-calving.jpg" alt="Glacier front point cloud with six detected calving events, E0 to E5, and 50 m scale bars" loading="lazy" /></div>
             <div class="project-head"><span class="p-status"><span class="led led-green"></span>FIELD STUDY</span><span class="p-tag">GLACIOLOGY</span></div>
             <h4>UAV Glacier Change Detection &amp; Alignment Study</h4>
-            <p>On consecutive drone surveys of a marine-terminating glacier in <strong>Svalbard</strong>, tested how much alignment matters for change estimates: joint vs. separate COLMAP reconstructions, GPS vs. TEASER++/GICP registration on stable terrain, M3C2 vs. DEM volumes. The same flights gave −9 to −1,762 m³, and <strong>a 0.25 m vertical bias alone would add ~2,250 m³ of apparent change</strong>.</p>
+            <p>On consecutive drone surveys of a marine-terminating glacier in <strong>Svalbard</strong>, tested how much alignment matters for change estimates: joint vs. separate COLMAP reconstructions, GPS vs. TEASER++/GICP registration on stable terrain, M3C2 vs. DEM volumes. The same flights gave −9 to −1,762 m³, and <strong>a 0.25 m vertical bias alone would add ~2,250 m³ of apparent change</strong>. Change detection between the two survey days flagged six calving events; the largest, E0, covers 16,076 m².</p>
           </article>
 
           <article class="project featured corner-frame">
-            <div class="project-media"><img src="assets/img/shipwreck.jpg" alt="Underwater photomosaic of the Skerki Bank Roman shipwreck site" loading="lazy" /></div>
+            <div class="project-media"><img src="assets/img/skerki-mosaic.jpg" alt="Underwater photomosaic of the Skerki Bank Roman shipwreck site, showing the amphora field" loading="lazy" /></div>
             <div class="project-head"><span class="p-status"><span class="led led-green"></span>ARCHAEOLOGY</span><span class="p-tag">UNDERWATER SfM</span></div>
             <h4>Underwater Photomosaicing of a Roman Shipwreck</h4>
             <p>Mosaicked the <strong>Skerki Bank</strong> site from 267 low-contrast seafloor images — SIFT and SuperPoint + SuperGlue matching, RANSAC, and Levenberg–Marquardt homography refinement, with image poses optimized in a <strong>GTSAM factor graph</strong>. Loop closures corrected drift on 6- and 29-image subsets, and SIFT outperformed SuperGlue on the larger image sets.</p>
@@ -319,7 +323,7 @@
           </article>
 
           <article class="project featured corner-frame">
-            <div class="project-media"><img src="assets/img/neuroam-fleet.jpg" alt="Unitree quadrupeds, Boston Dynamics Spot and AgileX rovers used for NEU Roam data collection" loading="lazy" /></div>
+            <div class="project-media"><img src="assets/img/neuroam-fleet-wide.jpg" alt="Unitree quadrupeds, Boston Dynamics Spot and AgileX rovers used for NEU Roam data collection" loading="lazy" /></div>
             <div class="project-head"><span class="p-status"><span class="led led-green"></span>DATASET</span><span class="p-tag">MULTI-PLATFORM</span></div>
             <h4>NEU Roam — Multi-Platform Data Collection</h4>
             <p>Field data collection across a heterogeneous robot fleet — Unitree quadrupeds, Boston Dynamics Spot and AgileX rovers carrying LiDAR, camera and IMU payloads. The sequences underpinning the camera–LiDAR calibration work.</p>
