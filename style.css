@@ -426,7 +426,7 @@ main { max-width: 1150px; margin: 0 auto; padding: clamp(1.5rem, 4vw, 3rem); }
 }
 .stat-label {
   font-family: var(--font-mono);
-  font-size: 0.58rem;
+  font-size: 0.68rem;
   letter-spacing: 0.09em;
   color: var(--muted);
   line-height: 1.5;
@@ -448,7 +448,7 @@ main { max-width: 1150px; margin: 0 auto; padding: clamp(1.5rem, 4vw, 3rem); }
   transition: border-color 0.15s, background-color 0.15s, transform 0.15s;
 }
 .route:hover { border-color: var(--acc); background: var(--card-hover); transform: translateY(-3px); }
-.route-tag { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em; color: var(--acc); }
+.route-tag { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.12em; color: var(--acc); }
 .route h4 { font-size: 1.06rem; }
 .route p { color: var(--muted); font-size: 0.86rem; flex: 1; }
 .route-go { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; color: var(--acc); margin-top: 0.35rem; }
@@ -529,7 +529,7 @@ a.card:hover { text-decoration: none; border-color: var(--acc); }
   transition: border-color 0.15s;
 }
 .pub:hover { border-color: var(--acc); }
-.pub-status { font-family: var(--font-mono); font-size: 0.63rem; letter-spacing: 0.1em; color: var(--acc); margin-bottom: 0.6rem; }
+.pub-status { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; color: var(--acc); margin-bottom: 0.6rem; }
 
 /* paper figures are white-background; give them a light plate so they read as figures */
 .pub-figure {
@@ -538,10 +538,10 @@ a.card:hover { text-decoration: none; border-color: var(--acc); }
   border: 1px solid var(--border);
   padding: 0.75rem;
 }
-.pub-figure img { width: 100%; display: block; }
+.pub-figure img { width: 100%; max-height: 360px; object-fit: contain; display: block; }
 .pub-figure figcaption {
   font-family: var(--font-mono);
-  font-size: 0.6rem;
+  font-size: 0.78rem;
   line-height: 1.5;
   color: #5b6b66;
   padding-top: 0.6rem;
@@ -588,6 +588,9 @@ a.card:hover { text-decoration: none; border-color: var(--acc); }
 
 /* ===== Projects ===== */
 .project-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+/* Projects tab: cards differ a lot in height, so flow them in columns instead of rows to avoid empty space */
+#projects .project-list { display: block; columns: 2; column-gap: 1rem; }
+#projects .project-list > .project { break-inside: avoid; margin-bottom: 1rem; }
 
 .group-label {
   font-family: var(--font-mono);
@@ -634,6 +637,7 @@ a.card:hover { text-decoration: none; border-color: var(--acc); }
 .video-portrait video { max-height: 420px; width: auto; max-width: 100%; margin: 0 auto; }
 
 .video-wrap { margin: 1.1rem 0 0.2rem; }
+.feature-wide .video-wrap { max-width: 720px; margin-left: auto; margin-right: auto; }
 .video-wrap video {
   width: 100%;
   display: block;
@@ -642,7 +646,7 @@ a.card:hover { text-decoration: none; border-color: var(--acc); }
 }
 .media-cap {
   font-family: var(--font-mono);
-  font-size: 0.63rem;
+  font-size: 0.74rem;
   letter-spacing: 0.03em;
   color: var(--muted);
   margin-top: 0.5rem;
@@ -656,10 +660,10 @@ a.card:hover { text-decoration: none; border-color: var(--acc); }
   flex-wrap: wrap;
   margin-bottom: 0.75rem;
 }
-.p-status { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.1em; color: var(--acc); }
+.p-status { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.1em; color: var(--acc); }
 .p-tag {
   font-family: var(--font-mono);
-  font-size: 0.58rem;
+  font-size: 0.66rem;
   letter-spacing: 0.08em;
   color: var(--amber);
   border: 1px solid var(--amber-line);
@@ -677,7 +681,7 @@ a.card:hover { text-decoration: none; border-color: var(--acc); }
 .repo-head { display: flex; align-items: center; gap: 0.55rem; margin-bottom: 0.55rem; }
 .repo-head h4 { margin: 0; word-break: break-word; }
 .repo-icon { color: var(--acc); font-size: 1rem; }
-.repo-lang { display: inline-block; margin-top: 0.85rem; font-family: var(--font-mono); font-size: 0.63rem; letter-spacing: 0.1em; color: var(--acc); }
+.repo-lang { display: inline-block; margin-top: 0.85rem; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; color: var(--acc); }
 
 /* ===== Awards ===== */
 .award-list { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.4rem; }
@@ -756,6 +760,7 @@ footer {
   .banner { margin-left: 0; max-width: 560px; }
   .card-grid.three { grid-template-columns: 1fr; }
   .project-list { grid-template-columns: 1fr; }
+  #projects .project-list { columns: 1; }
   .stat-band { grid-template-columns: repeat(2, 1fr); }
   .t-item { grid-template-columns: 1fr; gap: 0.5rem; }
   .banner-nav { opacity: 1; }
@@ -887,7 +892,7 @@ footer {
 }
 .feed li:not(:first-child)::before { background: var(--bg); border: 1px solid var(--acc); box-shadow: none; }
 .feed-date { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: var(--text); }
-.feed-tag { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.1em; color: var(--amber); border: 1px solid var(--amber-line); padding: 0.08rem 0.4rem; justify-self: start; }
+.feed-tag { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.1em; color: var(--amber); border: 1px solid var(--amber-line); padding: 0.08rem 0.4rem; justify-self: start; }
 .feed p { color: var(--muted); font-size: 0.9rem; }
 .feed p strong { color: var(--text); }
 

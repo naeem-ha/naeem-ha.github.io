@@ -225,12 +225,6 @@
     <section class="tab-panel" id="research">
       <h3 class="section-title"><span class="sec-idx">02</span> RESEARCH <span class="title-note">// Field Robotics Lab · Advisor: Prof. Hanumant Singh</span></h3>
 
-      <div class="research-hero corner-frame">
-        <canvas id="cloud" aria-hidden="true"></canvas>
-        <div class="viz-hud viz-hud-tl">POINT_CLOUD :: STRUCTURE-FROM-MOTION</div>
-        <div class="viz-hud viz-hud-br" id="vizFps">— PTS</div>
-      </div>
-
       <div class="section-block">
         <h3 class="section-title"><span class="sec-idx">02.1</span> PUBLICATIONS</h3>
         <div class="pub-list">
@@ -277,6 +271,12 @@
             </div>
           </article>
         </div>
+      </div>
+
+      <div class="research-hero corner-frame">
+        <canvas id="cloud" aria-hidden="true"></canvas>
+        <div class="viz-hud viz-hud-tl">POINT_CLOUD :: STRUCTURE-FROM-MOTION</div>
+        <div class="viz-hud viz-hud-br" id="vizFps">— PTS</div>
       </div>
 
       <div class="section-block">
@@ -471,20 +471,6 @@
           </div>
         </article>
 
-        <article class="project featured corner-frame">
-          <div class="project-head"><span class="p-status"><span class="led led-green"></span>MANIPULATION</span><span class="p-tag">INVERSE KINEMATICS</span></div>
-          <h4>Pick &amp; Place Control for PincherX-100</h4>
-          <p>Perception-driven manipulator in MATLAB and C++ — overhead camera and OpenCV for calibration and 3D geometry-based pose estimation, homogeneous transforms with dynamic inverse kinematics for obstacle-aware trajectory planning and execution.</p>
-          <div class="video-wrap video-portrait">
-            <video controls preload="none" playsinline poster="assets/img/pincherx-poster.jpg">
-              <source src="assets/pincherx-pick-place.mp4" type="video/mp4" />
-              Your browser does not support embedded video.
-              <a href="assets/pincherx-pick-place.mp4">Download the clip</a>.
-            </video>
-            <p class="media-cap">The arm executing a perception-driven pick-and-place cycle.</p>
-          </div>
-        </article>
-
         <article class="project">
           <div class="project-head"><span class="p-tag">SLAM · ROS 2</span></div>
           <h4>Multi-Modal SLAM Benchmark</h4>
@@ -507,6 +493,20 @@
           <div class="project-head"><span class="p-tag">EDGE AI · GPS-DENIED NAV</span></div>
           <h4>AI Visual Positioning System</h4>
           <p>Trolley tracking in GPS-denied industrial environments on Raspberry Pi 4B — Pyzbar + YOLO, dual-camera and IMU fusion, adaptive exposure for reliable QR/Code-128 detection. Cut production downtime ~30%.</p>
+        </article>
+
+        <article class="project featured corner-frame">
+          <div class="project-head"><span class="p-status"><span class="led led-green"></span>MANIPULATION</span><span class="p-tag">INVERSE KINEMATICS</span></div>
+          <h4>Pick &amp; Place Control for PincherX-100</h4>
+          <p>Perception-driven manipulator in MATLAB and C++ — overhead camera and OpenCV for calibration and 3D geometry-based pose estimation, homogeneous transforms with dynamic inverse kinematics for obstacle-aware trajectory planning and execution.</p>
+          <div class="video-wrap video-portrait">
+            <video controls preload="none" playsinline poster="assets/img/pincherx-poster.jpg">
+              <source src="assets/pincherx-pick-place.mp4" type="video/mp4" />
+              Your browser does not support embedded video.
+              <a href="assets/pincherx-pick-place.mp4">Download the clip</a>.
+            </video>
+            <p class="media-cap">The arm executing a perception-driven pick-and-place cycle.</p>
+          </div>
         </article>
 
       </div>
