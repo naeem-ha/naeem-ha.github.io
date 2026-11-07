@@ -254,6 +254,10 @@
             <h4>Reads Right, Judges Wrong: Near-Miss Failures and the Limits of Uncertainty Recovery in VLM Success Detectors</h4>
             <p class="pub-authors"><strong>Hamza Naeem</strong></p>
             <p>Vision-language models are now used to judge whether a robot succeeded. On arrangements that miss the instruction by one adjacent swap, <strong>Qwen3.5-4B passes 71 of 144, yet in a separate call it correctly transcribes 70 of the 71 it passes</strong>. Checking a neutral transcription in code removes the error on controlled scenes, but on 200 real robot episodes the verdict scores are near chance (AUROC 0.45–0.51).</p>
+            <figure class="pub-figure">
+              <img src="assets/img/pub-rrjw-teaser.png" alt="Letter tiles with one adjacent swap: Qwen3.5-4B transcribes the swap correctly but still answers PASS, and reports the alphabet on blank tiles" loading="lazy" />
+              <figcaption>Qwen3.5-4B as a success detector. Bracketed positions deviate from the instruction; green answers match the image, red ones don't. Asked to list the tiles, it reads the swap correctly, yet asked whether the robot succeeded it answers PASS. On blank tiles it reports the alphabet, the order it has memorized.</figcaption>
+            </figure>
             <div class="project-links">
               <a href="assets/papers/Naeem_Reads-Right-Judges-Wrong_CoRL2026-UncertainWM.pdf" target="_blank" rel="noopener">PDF ↗</a>
             </div>
